@@ -731,4 +731,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Calc/Scenes/calc_scene.unity
-  playerPath: C:/Users/Khrystyna/Desktop/calculator/calc.apk
+  playerPath: C:/Users/Khrystyna/Desktop/Calc.apk
