@@ -1,4 +1,0 @@
-#Fri Jun 24 16:29:57 EEST 2022
-base.0=C\:\\Unity projects\\Calculator\\Calculator\\Temp\\gradleOut\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
