@@ -9,10 +9,27 @@ public class Calculator : MonoBehaviour
     #region fields
 
     public TextMeshProUGUI inputText;
-    private float _number0 = 0, _input = 0;
-    private double _input1 =0, _input2 = 0, _result = 0;
-    private string _operator , _text;
-    private int _number1 = 0, _period = 0, _indexOperator = 0, _indexOperatorOrNumber=0, _indexRemovePeriod=0, _indexPow=0, _indexChangeSign=0, _indexChangeOperator=0, _indexEqual = 0;
+
+    private float _number0 = 0 ;
+    private float _input = 0;
+
+    private double _input1 =0;
+    private double _input2 = 0;
+    private double _result = 0;
+
+    private string _operator;
+    private string _text;
+
+    private int _number1 = 0;
+    private int _period = 0;
+
+    private int _indexOperator = 0;
+    private int _indexOperatorOrNumber = 0;
+    private int _indexRemovePeriod = 0;
+    private int _indexPow = 0;
+    private int _indexChangeSign = 0;
+    private int _indexChangeOperator = 0;
+    private int _indexEqual = 0;
     /*
     _number0 - використовується у вводі числа
     _input - використовується у вводі числа
