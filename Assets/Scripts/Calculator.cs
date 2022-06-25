@@ -30,32 +30,12 @@ public class Calculator : MonoBehaviour
     private int _indexChangeSign = 0;
     private int _indexChangeOperator = 0;
     private int _indexEqual = 0;
-    /*
-    _number0 - використовується у вводі числа
-    _input - використовується у вводі числа
-    _input1 - перше число
-    _input2 - друге число
-    _result - результат операції
-    _operator - оператор (його символ)
-    _text - те саме, що inputText.text
-    _number1 - кількість символів на екрані
-    _period - індекс, який показує, чи число є десятковим дробом
-     
-    змінні, що позначається однією буквою - індекси:
-    _indexOperator - показує, чи вже виконувалась якась операція, чи ні
-    _indexOperatorOrNumber - показує, що було останнім: ввід числа, чи клік на операцію
-    _indexRemovePeriod - індекс, завдяки якому при ClickRemove, якщо ми видаляємо крапку періоду (десяткового числа), саме число не змінюється
-    _indexPow - показує, чи операція, що відбулася була піднесення в степінь, чи взяття кореня, в такому разі для ClickRemove повинні видалятись кілька знаків за один клік
-    _indexChangeSign - показує, чи була останньою дією зміна знаку (ClickChange)
-    _indexChangeOperator - індекс, завдяки якому ми можемо змінити операцію, натиснувши на потрібну ще раз
-    _indexEqual - відповідає за те, щоб дорівнює не клікалось кілька разів поспіль;
-
-    */
+    
     #endregion fields
 
     #region Methods
 
-    public void ClickReset()//повністю очищає все (кнопка С)
+    public void ClickReset()
     {
         Debug.Log(message: $" reset");
         inputText.text = $"";
@@ -72,7 +52,7 @@ public class Calculator : MonoBehaviour
         _indexChangeOperator = 0;
         _indexEqual = 0;
     }
-    public void ClickRemove()//забирає один знак/цифру/попередню дію
+    public void ClickRemove()
     { 
         if (_indexOperatorOrNumber == 0 && _indexRemovePeriod!=_period-1)
         {
@@ -98,7 +78,7 @@ public class Calculator : MonoBehaviour
         _indexEqual = 0;
     }
 
-    public void ClickNumber(int num)//ввід числа
+    public void ClickNumber(int num)
     {
         CatchError();
         _indexOperatorOrNumber = 0;
@@ -138,7 +118,7 @@ public class Calculator : MonoBehaviour
         
            
     }
-    public void ClickPeriod(string val)//якщо потрібний десятковий дріб
+    public void ClickPeriod(string val)
     {
         if (_period == 0)
         {
@@ -148,7 +128,7 @@ public class Calculator : MonoBehaviour
         }
 
     }
-    public void ClickChange()//зміна знаку
+    public void ClickChange()
     {    
             if (_input >= 0)
             {
@@ -164,7 +144,7 @@ public class Calculator : MonoBehaviour
         _indexChangeSign = 1;
     }
 
-    public void ClickOperator(string oper)//операція
+    public void ClickOperator(string oper)
     {
         CatchError();
         _indexEqual = 0;
@@ -178,7 +158,7 @@ public class Calculator : MonoBehaviour
             _indexPow = 2;
         }
 
-        if (_indexOperatorOrNumber != 0 && _indexChangeOperator == 1)//якщо потрібно змінити операцію
+        if (_indexOperatorOrNumber != 0 && _indexChangeOperator == 1)
         {  
             ClickRemove();
             _indexPow = 0;     
@@ -202,7 +182,7 @@ public class Calculator : MonoBehaviour
         _indexChangeOperator = 1;
 
     }
-    public void ClickEqual()//дорівнює
+    public void ClickEqual()
     {
         
         if (_indexEqual == 0)
@@ -228,7 +208,7 @@ public class Calculator : MonoBehaviour
 
     public void Operation()
     {
-        if (_indexOperator != 0 && _indexOperatorOrNumber == 0)//якщо операція НЕ перша
+        if (_indexOperator != 0 && _indexOperatorOrNumber == 0)
         {
 
             InputSecond();
@@ -243,7 +223,7 @@ public class Calculator : MonoBehaviour
 
 
         }
-        else//якщо перша операція
+        else
             if (_indexOperatorOrNumber == 0)
         {
             _indexPow = 0;
@@ -266,7 +246,7 @@ public class Calculator : MonoBehaviour
             _period = 0;
         }
     }
-    public void InputSecond()//присвоює значення другому числу - in2
+    public void InputSecond()
     {
         if (_period != 0)
         {
@@ -279,7 +259,7 @@ public class Calculator : MonoBehaviour
         _period = 0;
 
     }
-    public void SimpleEqual()//перевіряє операцію і присвоєю значення результату - res
+    public void SimpleEqual()
     {
         switch (_operator)
         {
@@ -366,7 +346,7 @@ public class Calculator : MonoBehaviour
             _indexChangeOperator = 0;
         }
     }
-    public void CatchError()//запобігає вводу після ерора
+    public void CatchError()
     {
         if(inputText.text== $"Error!0")
         {
